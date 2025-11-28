@@ -1,0 +1,6 @@
+dspy-ai>=3.0.4
+ipykernel>=7.1.0
+ipywidgets>=8.1.8
+langgraph>=1.0.4
+pandas>=2.3.3
+rank-bm25>=0.2.2

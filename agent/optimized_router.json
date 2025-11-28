@@ -1,0 +1,63 @@
+{
+  "prog.predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "question": "What was the gross margin for Seafood category in the Winter Classics 1997 timeframe?",
+        "reasoning": "The user is asking to retrieve a specific financial metric (gross margin) from historical sales data, specifically within the Seafood category during Winter Classics in 1997. This involves both an understanding of past business records and performance metrics which are typically found or calculated using database information combined with policy definitions related to cost calculations for margins.",
+        "classification": "hybrid"
+      },
+      {
+        "augmented": true,
+        "question": "What is the definition of Average Order Value (AOV) in the KPI docs?",
+        "reasoning": "The user is asking for a definition of Average Order Value (AOV) as it appears in Key Performance Indicator (KPI) documents. This request involves understanding technical terminology used within business analytics and performance measurement frameworks, which are common topics covered by KPI documentation.",
+        "classification": "rag"
+      },
+      {
+        "augmented": true,
+        "question": "List the top 3 countries by number of customers.",
+        "reasoning": "This task requires retrieving data from a database or dataset that contains customer information by country. The logic behind this involves aggregating the number of customers in each country, sorting these counts to find the top three countries with the highest numbers, and then listing them out as per the user'士 request.",
+        "classification": "sql"
+      },
+      {
+        "augmented": true,
+        "question": "How many distinct products were sold in orders from Germany?",
+        "reasoning": "The question is asking for a specific data point - the number of distinct products sold in orders from Germany. This requires analyzing sales or order data, likely pulled from a database or dataset that includes location and product information per transaction. The task involves aggregating this data to count unique products associated with German transactions during an unspecified timeframe (likely 1997 given the previous context).",
+        "classification": "sql"
+      },
+      {
+        "augmented": true,
+        "question": "Using the AOV definition, what was the Average Order Value in 1997 for Dairy Products?",
+        "reasoning": "This query requires both data lookup and policy definitions. It involves fetching historical sales or orders data specifically for Dairy Products category in year 1997, and subsequently applying the Average Order Value (AOV) definition to interpret that data.",
+        "classification": "hybrid"
+      }
+    ],
+    "signature": {
+      "instructions": "Classify the user query to decide the tool.\n- 'sql': precise data questions, aggregations, counting, or looking up DB records.\n- 'rag': questions about policies, marketing definitions, return windows, or text docs.\n- 'hybrid': requires both data lookup AND policy definitions (e.g. \"Revenue during Summer Sale 1997\").",
+      "fields": [
+        {
+          "prefix": "Question:",
+          "description": "${question}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Classification:",
+          "description": "EXACTLY one of: sql, rag, hybrid. No other text."
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.13",
+      "dspy": "3.0.4",
+      "cloudpickle": "3.1"
+    }
+  }
+}
